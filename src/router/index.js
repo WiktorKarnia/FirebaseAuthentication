@@ -33,6 +33,14 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: () => import('../views/LoginView.vue')
+  },
+  {
+    path: '/post',
+    name: 'Post',
+    component: () => import('../views/AddPostView.vue'),
+    meta: {
+      requiresAuth: true
+    }
   }
 ]
 
