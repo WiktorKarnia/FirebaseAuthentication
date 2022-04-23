@@ -1,7 +1,3 @@
-
-
-
-
 <template>
   <div class="post">
     <h1>Add a new post</h1>
@@ -97,11 +93,14 @@ export default {
     submit() {
       const desc = document.getElementById('desc').value
       const uid = auth.currentUser.uid
-      //const location = this.currPos.value.lat.toFixed(2) + ', ' + this.currPos.value.lng.toFixed(2)
+      const location = this.currPos.lat.toFixed(2) + ', ' + this.currPos.lng.toFixed(2)
+      const email = auth.currentUser.email
+      const username = email.substring(0, email.indexOf('@'));
       const newPost = {
         description: desc,
-        location: "location",
-        uid: uid
+        location: location,
+        uid: uid,
+        username: username
       }
       
       db.collection('posts').add(newPost).then(() => {
