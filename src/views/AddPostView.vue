@@ -71,7 +71,7 @@ export default {
       new google.maps.Marker({
       position: currPos.value,
       map,
-      title: "Hello World!",
+      title: "You are here!",
       });
     })
     
@@ -93,7 +93,7 @@ export default {
     submit() {
       const desc = document.getElementById('desc').value
       const uid = auth.currentUser.uid
-      const location = this.currPos.lat.toFixed(2) + ', ' + this.currPos.lng.toFixed(2)
+      const location = this.currPos.lat.toFixed(4) + ', ' + this.currPos.lng.toFixed(4)
       const email = auth.currentUser.email
       const username = email.substring(0, email.indexOf('@'));
       const newPost = {

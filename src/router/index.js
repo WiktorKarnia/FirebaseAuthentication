@@ -12,9 +12,9 @@ const routes = [
     }
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import('../views/AboutView.vue'),
+    path: '/liked',
+    name: 'Liked',
+    component: () => import('../views/LikedView.vue'),
     meta: {
       requiresAuth: true
     }
