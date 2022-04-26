@@ -20,6 +20,14 @@ const routes = [
     }
   },
   {
+    path: '/comments',
+    name: 'Comments',
+    component: () => import('../views/CommentsView.vue'),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
     path: '/welcome',
     name: 'Welcome',
     component: () => import('../views/WelcomeView.vue')

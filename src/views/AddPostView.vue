@@ -5,8 +5,10 @@
     <div>
     <form id="form">
         <div>
+          <label for="name" class="form-label">Post name</label><br>
+          <input type="text" name="name" id="name" placeholder="Give your post a name"><br>
           <label for="desc" class="form-label">Description</label><br>
-          <textarea name="desc" id="desc" placeholder="Add a descreption"></textarea>
+          <textarea name="desc" id="desc" placeholder="Add a descreption"></textarea><br>
         </div>
         <div>
           <h1>Your location: </h1>
@@ -92,11 +94,13 @@ export default {
   methods: { 
     submit() {
       const desc = document.getElementById('desc').value
+      const name = document.getElementById('name').value
       const uid = auth.currentUser.uid
       const location = this.currPos.lat.toFixed(4) + ', ' + this.currPos.lng.toFixed(4)
       const email = auth.currentUser.email
       const username = email.substring(0, email.indexOf('@'));
       const newPost = {
+        post_name: name,
         description: desc,
         location: location,
         uid: uid,

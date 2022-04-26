@@ -1,7 +1,8 @@
 <template>
   <div id='nav' v-if="$store.state.user">
     <router-link to="/">Home</router-link> |
-    <router-link to="/liked">Liked Posts</router-link>
+    <router-link to="/liked">Liked Posts</router-link> |
+    <router-link to="/comments">Comments</router-link>
     <button style ="margin-left:10px"  @click="$store.dispatch('logout')">Logout</button>
   </div>
   <router-view/>
